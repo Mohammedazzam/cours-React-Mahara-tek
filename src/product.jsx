@@ -25,7 +25,9 @@ class Product extends React.Component {
             ))}
         </ul>
     );
-
+    }
+    clickHandler = () => {
+        this.state.count++
     }
 
 
@@ -42,6 +44,7 @@ class Product extends React.Component {
             // : "btn btn-primary m-2";
 
 
+
         return (
             <div>
                 {this.state.names.length === 0 && <h4>No Names</h4>}
@@ -55,6 +58,7 @@ class Product extends React.Component {
                 </ul>
 
                 {/* {this.renderName()} */}
+                <button onClick={this.clickHandler} className="btn btn-primary btn-sm">+</button>        
             </div>
         )
     }
