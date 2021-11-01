@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Product extends React.Component {
     state = {
         name:"Burger",
-        count: 0,
+        count: 4,
         imgUrl :"logo192.png",
         names:["Ahmed","Osama", "Ali" , "Mohammed", "Azz", "roro"]
     };
@@ -26,8 +26,8 @@ class Product extends React.Component {
         </ul>
     );
     }
-    clickHandler = () => {
-        this.state.count++
+    IncrementHandler = () => {
+        this.setState({ count : this.state.count + 1 })
     }
 
 
@@ -58,7 +58,7 @@ class Product extends React.Component {
                 </ul>
 
                 {/* {this.renderName()} */}
-                <button onClick={this.clickHandler} className="btn btn-primary btn-sm">+</button>        
+                <button onClick={this.IncrementHandler} className="btn btn-primary btn-sm">+</button>        
             </div>
         )
     }
