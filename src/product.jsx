@@ -5,7 +5,7 @@ class Product extends React.Component {
         name:"Burger",
         count: 0,
         imgUrl :"logo192.png",
-        names:["Ahmed","Osama", "Ali"]
+        names:["Ahmed","Osama", "Ali" , "Mohammed"]
     };
 
     getClasses() {
