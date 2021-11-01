@@ -5,13 +5,26 @@ class Product extends React.Component {
         name:"Burger",
         count: 0,
         imgUrl :"logo192.png",
-        names:["Ahmed","Osama", "Ali" , "Mohammed"]
+        names:["Ahmed","Osama", "Ali" , "Mohammed", "Azz", "roro"]
     };
 
     getClasses() {
         return  this.state.count === 0
         ? "btn btn-warning m-2"
         : "btn btn-primary m-2";
+
+    }
+    renderName() {
+        if(this.state.names.length === 0){
+            return <h2>No Names</h2>
+        }
+        return(
+            <ul>
+            {this.state.names.map(name => (
+                <li key={name}>{name}</li>
+            ))}
+        </ul>
+    );
 
     }
 
@@ -31,14 +44,17 @@ class Product extends React.Component {
 
         return (
             <div>
+                {this.state.names.length === 0 && <h4>No Names</h4>}
                 {/* <img src={this.state.imgUrl} alt="" /> */}
                 <span style={{color:"red"}}>{this.state.name}</span>
                 <span className={this.getClasses()}>{this.state.count}</span>
                 <ul>
                     {this.state.names.map(name => (
-                        <li key={name}>{name}</li>
+                    <li key={name}>{name}</li>
                     ))}
                 </ul>
+
+                {/* {this.renderName()} */}
             </div>
         )
     }
