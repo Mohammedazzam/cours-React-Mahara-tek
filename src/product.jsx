@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
 
 class Product extends React.Component {
-    state = {};
+    state = {
+        name:"Burger",
+        count: 3
+    };
     render() { 
-        return <span>Product1</span>;
+        return (
+            <div>
+                <span>{this.state.name}</span>
+                <span className="btn btn-primary m-2">{this.state.count}</span>
+            </div>
+        )
     }
 }
 
